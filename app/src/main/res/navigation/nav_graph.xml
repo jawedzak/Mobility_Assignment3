@@ -20,6 +20,9 @@
         android:name="sheridan.jawedzak.assignment3.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_Detail_to_overview"
+            app:destination="@id/overviewFragment" />
         <argument
             android:name="selectedProperty"
             app:argType="sheridan.jawedzak.assignment3.network.FlowerJson"

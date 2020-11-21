@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import sheridan.jawedzak.assignment3.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
@@ -20,6 +21,13 @@ class DetailFragment : Fragment() {
         val viewModelFactory = DetailViewModelFactory(flowersProperty, application)
         binding.viewModel = ViewModelProvider(
                 this, viewModelFactory).get(DetailViewModel::class.java)
+        binding.btn.setOnClickListener { goBack() }
         return binding.root
+    }
+
+    // go back
+    private fun goBack(){
+        val action = DetailFragmentDirections.actionDetailToOverview()
+        findNavController().navigate(action)
     }
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import kotlinx.android.synthetic.main.fragment_detail.*
 import sheridan.jawedzak.assignment3.network.FlowerJson
 
 class DetailViewModel(flowersProperty: FlowerJson,

@@ -3,6 +3,7 @@ package sheridan.jawedzak.assignment3.detail
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.fragment_detail.*
 import sheridan.jawedzak.assignment3.network.FlowerJson
 
 class DetailViewModelFactory(
