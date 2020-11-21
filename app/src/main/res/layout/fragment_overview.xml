@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="sheridan.jawedzak.assignment3.overview.OverviewViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="sheridan.jawedzak.assignment3.MainActivity">
+
+        <TextView
+            android:id="@+id/flowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#42b72a"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:text="Flowers"
+            tools:text="Flowers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            app:listData="@{viewModel.properties}"
+            tools:listitem="@layout/grid_view_item" />
+
+        <ImageView
+            android:id="@+id/status_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:flowersApiStatus="@{viewModel.status}" />
+    </FrameLayout>
+</layout>

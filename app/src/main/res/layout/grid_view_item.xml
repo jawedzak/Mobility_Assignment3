@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+        <data>
+            <variable
+                name="property"
+                type="sheridan.jawedzak.assignment3.network.FlowerJson" />
+        </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/flowers_image"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="15dp"
+            app:imageUrl="@{property.pictures.large}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/flower_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{property.label}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#281e5d"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/flowers_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Aster"/>
+
+        <TextView
+            android:id="@+id/flower_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{property.price}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#42b72a"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toEndOf="@+id/flower_label"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$2.99" />
+
+        <TextView
+            android:id="@+id/flower_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{property.text}"
+            android:textColor="#de000000"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toEndOf="@+id/flowers_image"
+            app:layout_constraintTop_toBottomOf="@+id/flower_label"
+            tools:text="Text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
