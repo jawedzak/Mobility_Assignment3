@@ -12,7 +12,6 @@ enum class FlowersApiStatus { LOADING, ERROR, DONE }
 
 class OverviewViewModel : ViewModel() {
 
-    // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<FlowersApiStatus>()
 
     val status: LiveData<FlowersApiStatus>
@@ -20,7 +19,6 @@ class OverviewViewModel : ViewModel() {
 
     private val _properties = MutableLiveData<List<FlowerJson>>()
 
-    // The external LiveData interface to the property is immutable, so only this class can modify
     val properties: LiveData<List<FlowerJson>>
         get() = _properties
 
@@ -29,10 +27,10 @@ class OverviewViewModel : ViewModel() {
         get() = _navigateToSelectedProperty
 
     init {
-        getFlowersRealEstateProperties()
+        getFlowersProperties()
     }
 
-    private fun getFlowersRealEstateProperties() {
+    private fun getFlowersProperties() {
 
         viewModelScope.launch {
             _status.value = FlowersApiStatus.LOADING

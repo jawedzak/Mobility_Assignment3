@@ -20,7 +20,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<FlowerJson>?) {
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?)  {
     val img = "http://tetervak.dev.fast.sheridanc.on.ca/Examples/jQuery/Flowers3/images/flowers/$imgUrl"
-    img.let {
+    imgUrl.let {
         val imgUri = img.toUri().buildUpon()
                 .scheme("https")
                 .build()

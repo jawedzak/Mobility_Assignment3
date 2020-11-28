@@ -11,6 +11,7 @@ buildscript {
         version_navigation = "1.0.0"
         version_retrofit = "2.9.0"
         version_recyclerview = "1.1.0"
+        room_version = "2.2.0"
     }
     repositories {
         google()
@@ -20,9 +21,6 @@ buildscript {
         classpath "com.android.tools.build:gradle:$version_android_gradle_plugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
-
-        def nav_version = "2.3.1"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

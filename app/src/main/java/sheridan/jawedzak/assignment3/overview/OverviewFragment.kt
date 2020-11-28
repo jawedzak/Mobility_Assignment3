@@ -9,12 +9,8 @@ import sheridan.jawedzak.assignment3.databinding.FragmentOverviewBinding
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 
-
 class OverviewFragment : Fragment() {
 
-    /**
-     * Lazily initialize our [OverviewViewModel].
-     */
     private val viewModel: OverviewViewModel by lazy {
         ViewModelProvider(this).get(OverviewViewModel::class.java)
     }
@@ -33,7 +29,7 @@ class OverviewFragment : Fragment() {
             viewModel.displayPropertyDetails(it)
         })
 
-        viewModel.navigateToSelectedProperty.observe(this, Observer {
+        viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
             if ( null != it ) {
                 this.findNavController().navigate(
                         OverviewFragmentDirections.actionShowDetail(it))
