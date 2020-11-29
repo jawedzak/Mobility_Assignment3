@@ -2,6 +2,8 @@ package sheridan.jawedzak.assignment3.database
 
 import androidx.room.*
 
+// tablename flowerList
+
 @Entity(tableName = "flowersList")
 data class DatabaseEntities (
     @PrimaryKey

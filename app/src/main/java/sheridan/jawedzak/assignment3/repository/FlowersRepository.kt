@@ -14,10 +14,6 @@ class FlowerRepository (private val db: FlowerDatabase){
         return flowerDao.get(name).toFlower()
     }
 
-    suspend fun delete(flower: Flower){
-        flowerDao.delete(flower.name)
-    }
-
     suspend fun update(flower: Flower){
         flowerDao.update(flower.toFlowerEntity())
     }
